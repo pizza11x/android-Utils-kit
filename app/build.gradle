@@ -1,0 +1,73 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.pizza11x.androidutilskit'
+
+    signingConfigs {
+        release {
+        }
+    }
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.pizza11x.androidutilskit"
+        minSdk 26
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation project(path: ':AndroidUtilsKit')
+
+
+    def core_version = '1.9.0'
+    def app_compact_version = '1.5.1'
+    def material_version = '1.7.0'
+    def coroutines_version = '1.6.4'
+    def dagger_hilt_version = '2.44.1'
+    def kotlin_stdlib_version = '1.7.21'
+
+    api "androidx.core:core-ktx:$core_version"
+    api "androidx.appcompat:appcompat:$app_compact_version"
+    api "com.google.android.material:material:$material_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_stdlib_version"
+
+    def junit_version = '4.13.2'
+    def junit_ext_version = '1.1.4'
+    def espresso_version = '3.5.0'
+    def core_testing_version = '2.1.0'
+    def mock_version = '1.13.2'
+
+    /* TEST */
+    testImplementation "junit:junit:$junit_version"
+    androidTestImplementation "androidx.test.ext:junit:$junit_ext_version"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"
+    testImplementation "androidx.arch.core:core-testing:$core_testing_version"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutines_version"
+    testImplementation "io.mockk:mockk:$mock_version"
+    androidTestImplementation "io.mockk:mockk-android:$mock_version"
+    androidTestImplementation "com.google.dagger:hilt-android-testing:$dagger_hilt_version"
+
+}
