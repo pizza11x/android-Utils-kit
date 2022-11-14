@@ -33,7 +33,7 @@ object MaterialDialogBuilder {
                 negativeListener?.invoke()
             }
         }
-        
+
         builder.show()
     }
 }
