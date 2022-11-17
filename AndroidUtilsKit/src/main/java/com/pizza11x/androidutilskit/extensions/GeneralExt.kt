@@ -1,6 +1,7 @@
 package com.pizza11x.androidutilskit.extensions
 
 import android.content.Context
+import android.content.res.Resources
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.Matrix
@@ -114,4 +115,17 @@ fun Bitmap.storeToExternalStorage(): File? {
         e.printStackTrace()
         null
     }
+}
+
+/* INT */
+fun Int.pxToDp(): Int {
+    return (this / Resources.getSystem().displayMetrics.density).toInt()
+}
+
+fun Int.dpToPx(): Int {
+    return (this * Resources.getSystem().displayMetrics.density).toInt()
+}
+
+fun Int.dpToPxFloat(): Float {
+    return (this * Resources.getSystem().displayMetrics.density)
 }
