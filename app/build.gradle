@@ -17,7 +17,7 @@ android {
         minSdk 26
         targetSdk 33
         versionCode 1
-        versionName "1.0"
+        versionName "1.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -45,7 +45,7 @@ dependencies {
     def app_compact_version = '1.5.1'
     def material_version = '1.7.0'
     def coroutines_version = '1.6.4'
-    def dagger_hilt_version = '2.44.1'
+    def dagger_hilt_version = '2.44.2'
     def kotlin_stdlib_version = '1.7.21'
 
     api "androidx.core:core-ktx:$core_version"

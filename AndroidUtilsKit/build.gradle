@@ -49,14 +49,14 @@ dependencies {
     def material_version = '1.7.0'
     def databinding_version = '7.3.1'
     def coroutines_version = '1.6.4'
-    def dagger_hilt_version = '2.44.1'
+    def dagger_hilt_version = '2.44.2'
     def retrofit_version = "2.9.0"
     def okhttp_version = '5.0.0-alpha.10'
     def picasso_version = '2.71828'
     def kotlin_stdlib_version = '1.7.21'
     def annotation_version = '1.5.0'
     def room_version = '2.4.3'
-    def qrcode_version = '3.4.0'
+    def qrcode_version = '3.5.1'
 
     api "androidx.core:core-ktx:$core_version"
     api "androidx.appcompat:appcompat:$app_compact_version"
