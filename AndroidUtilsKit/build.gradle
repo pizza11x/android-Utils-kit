@@ -42,6 +42,7 @@ android {
 
 dependencies {
 
+    implementation 'com.google.android.gms:play-services-auth-api-phone:18.0.1'
     def ktx_version = '2.6.0-alpha03'
     def core_version = '1.9.0'
     def app_compact_version = '1.5.1'
@@ -55,6 +56,7 @@ dependencies {
     def kotlin_stdlib_version = '1.7.21'
     def annotation_version = '1.5.0'
     def room_version = '2.4.3'
+    def qrcode_version = '3.4.0'
 
     api "androidx.core:core-ktx:$core_version"
     api "androidx.appcompat:appcompat:$app_compact_version"
@@ -62,11 +64,9 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_stdlib_version"
     implementation "androidx.annotation:annotation:$annotation_version"
 
-
     /* DATABINDING */
     api "androidx.databinding:databinding-runtime:$databinding_version"
     kapt "androidx.databinding:databinding-compiler:$databinding_version"
-
 
     /* KTX */
     api "androidx.lifecycle:lifecycle-runtime-ktx:$ktx_version"
@@ -95,10 +95,13 @@ dependencies {
 
     /* ROOM */
     implementation "androidx.room:room-runtime:$room_version"
-    annotationProcessor "androidx.room:room-compiler:$room_version"
 
     /* ENCRYPTED SHARED PREFERENCE */
     implementation 'androidx.security:security-crypto:1.1.0-alpha04'
+
+    /* QRCODE */
+
+    api "com.google.zxing:core:$qrcode_version"
 
     def junit_version = '4.13.2'
     def junit_ext_version = '1.1.4'
