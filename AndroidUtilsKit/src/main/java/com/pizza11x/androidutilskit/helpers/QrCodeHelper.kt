@@ -3,6 +3,7 @@ package com.pizza11x.androidutilskit.helpers
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Color
+import android.util.Log
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.qrcode.QRCodeWriter
 import com.pizza11x.androidutilskit.extensions.dpToPx
@@ -52,4 +53,6 @@ object QrCodeHelper {
         return decoded
 
     }
+
+    private val TAG = "QRCODE_HELPER_TAG"
 }

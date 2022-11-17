@@ -1,6 +1,5 @@
 package com.pizza11x.androidutilskit.helpers
 
-import android.util.Log
 import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.*
@@ -39,7 +38,7 @@ object DateHelper {
         return try {
             inputFormatter.parse(dateString)
         } catch (e: ParseException) {
-            Log.e(TAG, e.message ?: CONVERSION_ERROR)
+            e.printStackTrace()
             null
         }
     }
@@ -54,7 +53,7 @@ object DateHelper {
             val outputFormatter = SimpleDateFormat(outputFormat, Locale.getDefault())
             outputFormatter.format(inputDate as Date)
         } catch (e: ParseException) {
-            Log.e(TAG, e.message ?: FORMATTING_ERROR)
+            e.printStackTrace()
             ""
         }
     }
@@ -67,7 +66,7 @@ object DateHelper {
             val outputFormatter = SimpleDateFormat(outputFormat, Locale.getDefault())
             outputFormatter.format(date)
         } catch (e: ParseException) {
-            Log.e(TAG, e.message ?: FORMATTING_ERROR)
+            e.printStackTrace()
             ""
         }
     }

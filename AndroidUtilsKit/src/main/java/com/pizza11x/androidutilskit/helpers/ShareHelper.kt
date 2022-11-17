@@ -41,4 +41,7 @@ object ShareHelper {
         ContextCompat.startActivity(context, Intent.createChooser(sendIntent, null), null)
 
     }
+
+
+    private val TAG = "SHARE_HELPER_TAG"
 }

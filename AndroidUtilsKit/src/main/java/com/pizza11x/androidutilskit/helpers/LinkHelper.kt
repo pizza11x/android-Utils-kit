@@ -11,4 +11,6 @@ object LinkHelper {
         intent.data = Uri.parse(url)
         context.startActivity(intent)
     }
+
+    private val TAG = "LINK_HELPER_TAG"
 }
