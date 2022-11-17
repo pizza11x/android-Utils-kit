@@ -60,7 +60,7 @@ fun View.showSnackbar(text: String, time: Int) {
 fun View.showSoftKeyboard() {
     val inputMethodManager =
         context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-    inputMethodManager.showSoftInput(this, InputMethodManager.SHOW_FORCED)
+    inputMethodManager.showSoftInput(this, 0)
 }
 
 fun View.takeScreenshot(defaultColor: Int = -1): Bitmap {

@@ -3,6 +3,7 @@ package com.pizza11x.androidutilskit.receivers
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
+import android.os.Build
 import com.google.android.gms.auth.api.phone.SmsRetriever
 import com.google.android.gms.common.api.CommonStatusCodes
 import com.google.android.gms.common.api.Status
@@ -20,7 +21,11 @@ class SmsReceiver : BroadcastReceiver() {
         // CHECK ACTION
         if (intent?.action == SmsRetriever.SMS_RETRIEVED_ACTION) {
             val extras = intent.extras
-            val status = extras?.get(SmsRetriever.EXTRA_STATUS) as Status?
+            val status = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                extras?.getParcelable(SmsRetriever.EXTRA_STATUS, Status::class.java)
+            } else {
+                extras?.get(SmsRetriever.EXTRA_STATUS) as? Status
+            }
             status?.let {
                 when (it.statusCode) {
                     CommonStatusCodes.SUCCESS -> {
